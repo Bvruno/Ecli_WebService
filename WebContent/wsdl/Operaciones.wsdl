@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice" xmlns:intf="http://webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="resta">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="restaResponse">
+    <complexType>
+     <sequence>
+      <element name="restaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="division">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divisionResponse">
+    <complexType>
+     <sequence>
+      <element name="divisionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="suma">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sumaResponse">
+    <complexType>
+     <sequence>
+      <element name="sumaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplicacion">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplicacionResponse">
+    <complexType>
+     <sequence>
+      <element name="multiplicacionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="calcularPago">
+    <complexType>
+     <sequence>
+      <element name="nombre" type="xsd:string"/>
+      <element name="precio" type="xsd:double"/>
+      <element name="descuento" type="xsd:double"/>
+      <element name="cantidad" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="calcularPagoResponse">
+    <complexType>
+     <sequence>
+      <element name="calcularPagoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sumaRequest">
+
+      <wsdl:part element="impl:suma" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sumaResponse">
+
+      <wsdl:part element="impl:sumaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplicacionRequest">
+
+      <wsdl:part element="impl:multiplicacion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisionResponse">
+
+      <wsdl:part element="impl:divisionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="calcularPagoResponse">
+
+      <wsdl:part element="impl:calcularPagoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplicacionResponse">
+
+      <wsdl:part element="impl:multiplicacionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="restaResponse">
+
+      <wsdl:part element="impl:restaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="calcularPagoRequest">
+
+      <wsdl:part element="impl:calcularPago" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="restaRequest">
+
+      <wsdl:part element="impl:resta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisionRequest">
+
+      <wsdl:part element="impl:division" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Operaciones">
+
+      <wsdl:operation name="resta">
+
+         <wsdl:input message="impl:restaRequest" name="restaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:restaResponse" name="restaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="division">
+
+         <wsdl:input message="impl:divisionRequest" name="divisionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divisionResponse" name="divisionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="suma">
+
+         <wsdl:input message="impl:sumaRequest" name="sumaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sumaResponse" name="sumaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplicacion">
+
+         <wsdl:input message="impl:multiplicacionRequest" name="multiplicacionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplicacionResponse" name="multiplicacionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="calcularPago">
+
+         <wsdl:input message="impl:calcularPagoRequest" name="calcularPagoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:calcularPagoResponse" name="calcularPagoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OperacionesSoapBinding" type="impl:Operaciones">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="resta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="restaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="restaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="division">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divisionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divisionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="suma">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sumaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sumaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplicacion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplicacionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplicacionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="calcularPago">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="calcularPagoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="calcularPagoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OperacionesService">
+
+      <wsdl:port binding="impl:OperacionesSoapBinding" name="Operaciones">
+
+         <wsdlsoap:address location="http://localhost:8080/WebServiceAndroid/services/Operaciones"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

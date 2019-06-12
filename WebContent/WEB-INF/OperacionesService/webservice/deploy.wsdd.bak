@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OperacionesService WSDL service -->
+
+  <service name="Operaciones" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice"/>
+      <parameter name="wsdlServiceElement" value="OperacionesService"/>
+      <parameter name="schemaQualified" value="http://webservice"/>
+      <parameter name="wsdlServicePort" value="Operaciones"/>
+      <parameter name="className" value="webservice.OperacionesSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Operaciones"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="resta" qname="operNS:resta" xmlns:operNS="http://webservice" returnQName="retNS:restaReturn" xmlns:retNS="http://webservice" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="division" qname="operNS:division" xmlns:operNS="http://webservice" returnQName="retNS:divisionReturn" xmlns:retNS="http://webservice" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="suma" qname="operNS:suma" xmlns:operNS="http://webservice" returnQName="retNS:sumaReturn" xmlns:retNS="http://webservice" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="multiplicacion" qname="operNS:multiplicacion" xmlns:operNS="http://webservice" returnQName="retNS:multiplicacionReturn" xmlns:retNS="http://webservice" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="calcularPago" qname="operNS:calcularPago" xmlns:operNS="http://webservice" returnQName="retNS:calcularPagoReturn" xmlns:retNS="http://webservice" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nombre" xmlns:pns="http://webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:precio" xmlns:pns="http://webservice" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:descuento" xmlns:pns="http://webservice" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:cantidad" xmlns:pns="http://webservice" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="division suma multiplicacion resta calcularPago"/>
+
+  </service>
+</deployment>
